@@ -1,0 +1,405 @@
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ===================== */
+/* Global Layout & Typography */
+/* ===================== */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+h1, h2, h3 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+h2 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid #333;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  width: 100%;
+}
+
+/* ===================== */
+/* Cards & Panels */
+/* ===================== */
+.dashboard-card {
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid #333;
+}
+
+.dashboard-card h3 {
+  margin-top: 0;
+  font-size: 1.25rem;
+  color: #646cff;
+  border-bottom: 1px solid #333;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+/* ===================== */
+/* Grids & Layouts */
+/* ===================== */.grid-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px; /* Increased gap */
+  align-items: end;
+}
+
+/* Remove bottom margin in grid since gap handles it */
+.grid-form .input-group {
+  margin-bottom: 0;
+}
+
+/* Sales page 3-card layout */.sales-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+/* ===================== */
+/* Inputs & Controls */
+/* ===================== */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  color: #aaa;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="password"],
+input[type="email"],
+select,
+.search-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #2a2a2a;
+  color: #fff;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
+/* React Select container override */
+.select-container {
+  width: 100%;
+}
+
+/* ===================== */
+/* Buttons */
+/* ===================== */
+button {
+  border-radius: 6px;
+  border: none;
+  padding: 12px 24px; /* Larger clickable area */
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #646cff;
+  color: white;
+  transition: background-color 0.2s, transform 0.1s;
+  letter-spacing: 0.02em;
+}
+
+button:hover {
+  background-color: #535bf2;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button.secondary {
+  background-color: #333;
+  color: #ccc;
+}
+
+button.secondary:hover {
+  background-color: #444;
+}
+
+button.outline {
+  background-color: transparent;
+  border: 1px solid #444;
+  color: #ccc;
+}
+
+button.outline:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #646cff;
+  color: #fff;
+}
+
+button.danger {
+  background-color: #ef4444;
+}
+
+button.danger:hover {
+  background-color: #dc2626;
+}
+
+/* ===================== */
+/* Table Styling */
+/* ===================== */
+.table-container {
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 1px; /* Border effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1e1e1e;
+}
+
+table th, table td {
+  padding: 16px 20px; /* More padding for readability */
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+table th {
+  background-color: #252525;
+  color: #ddd; /* Higher contrast */
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+table td {
+  color: #e0e0e0;
+  font-size: 0.95rem;
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+table tr:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.table-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.table-actions button {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+/* ===================== */
+/* Auth Page (Isolated) */
+/* ===================== */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 24px;
+  background: #1a1a1a;
+}
+
+.auth-box {
+  background: #242424;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid #333;
+}
+
+.auth-box h2 {
+  margin-bottom: 1.5rem;
+  color: #fff;
+  border: none;
+}
+
+.auth-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-box input {
+  background: #1a1a1a;
+  padding: 12px;
+}
+
+.auth-box button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+}
+
+.auth-links {
+  margin-top: 1.5rem;
+  font-size: 0.9em;
+  color: #888;
+}
+
+.auth-links button {
+  background: none;
+  color: #646cff;
+  padding: 0;
+  width: auto;
+  display: inline;
+}
+
+.auth-links button:hover {
+  background: none;
+  text-decoration: underline;
+}
+
+/* ===================== */
+/* Navbar */
+/* ===================== */
+.navbar {
+  background: #1e1e1e;
+  border-bottom: 1px solid #333;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.navbar-links button {
+  background: transparent;
+  color: #aaa;
+  font-weight: 500;
+}
+
+.navbar-links button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.navbar-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ===================== */
+/* Mobile Responsive */
+/* ===================== */
+@media (max-width: 768px) {
+  .grid-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .sales-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .page-container {
+    padding: 16px;
+  }
+
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: #1e1e1e;
+    flex-direction: column;
+    padding: 16px;
+    border-bottom: 1px solid #333;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+  
+  .navbar-toggle {
+    display: block;
+  }
+  
+  .navbar-links button {
+    width: 100%;
+    text-align: left;
+    padding: 12px;
+  }
+}

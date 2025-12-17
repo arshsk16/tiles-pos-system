@@ -1,0 +1,15 @@
+flask db migrate -m "describe change"
+flask db upgrade
+
+
+$env:FLASK_APP="app.py"
+flask run
+
+.\venv\Scripts\activate
+
+] "OPTIONS /change-password HTTP/1.1" 404 -
+127.0.0.1 - - [19/Sep/2025 22:26:58] "OPTIONS /change-password HTTP/1.1" 404 -
+127.0.0.1 - - [19/Sep/2025 22:27:19] "OPTIONS /change-password HTTP/1.1" 404 -
+127.0.0.1 - - [19/Sep/2025 22:27:21] "OPTIONS /change-password HTTP/1.1" 404 -
+
+

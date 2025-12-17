@@ -1,0 +1,104 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "TilesTrack API with JWT",
+  "dateExported": "2025-09-18",
+  "version": "1.1",
+  "requests": [
+    {
+      "name": "Register User",
+      "url": "http://127.0.0.1:5000/register",
+      "method": "POST",
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin123\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "name": "Login User",
+      "url": "http://127.0.0.1:5000/login",
+      "method": "POST",
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin123\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "name": "Add Product",
+      "url": "http://127.0.0.1:5000/products",
+      "method": "POST",
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"name\": \"Granite Black\",\n  \"category\": \"Tiles\",\n  \"size\": \"3x3\",\n  \"price\": 520.0,\n  \"stock_qty\": 50\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token}}"
+        }
+      ]
+    },
+    {
+      "name": "Get All Products",
+      "url": "http://127.0.0.1:5000/products",
+      "method": "GET",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token}}"
+        }
+      ]
+    },
+    {
+      "name": "Record Sale",
+      "url": "http://127.0.0.1:5000/sales",
+      "method": "POST",
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"product_id\": 1,\n  \"quantity\": 5\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token}}"
+        }
+      ]
+    },
+    {
+      "name": "Low Stock Products",
+      "url": "http://127.0.0.1:5000/products/low-stock?threshold=10",
+      "method": "GET",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token}}"
+        }
+      ]
+    }
+  ],
+  "variables": [
+    {
+      "name": "token",
+      "value": ""
+    }
+  ]
+}

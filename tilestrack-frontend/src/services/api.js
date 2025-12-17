@@ -1,0 +1,30 @@
+// src/services/api.js
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || "http://127.0.0.1:5000",
+});
+
+// attach token automatically
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem("token");
+  if (token) config.headers.Authorization = `Bearer ${token}`;
+  return config;
+});
+
+// central response handler: auto logout on 401
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response && error.response.status === 401) {
+      // clear auth and redirect to auth page
+      localStorage.removeItem("token");
+      localStorage.removeItem("username");
+      // force navigation — simple approach:
+      window.location.href = "/auth";
+    }
+    return Promise.reject(error);
+  }
+);
+
+export default api;

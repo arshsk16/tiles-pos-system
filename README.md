@@ -24,8 +24,8 @@ The system is built to be simple, robust, and accessible from both laptops and m
     *   *Note: Contact the administrator for account creation or password resets.*
 
 ## Deployment URLs
-*   **Frontend (App)**: `https://[YOUR-FRONTEND-URL].vercel.app` (Placeholder)
-*   **Backend (API)**: `https://[YOUR-BACKEND-URL].onrender.com` (Placeholder)
+*   **Frontend (App)**: `https://[].vercel.app` 
+*   **Backend (API)**: `https://[].onrender.com` 
 
 ## Environment Variables
 The application requires the following environment variables to be set in your deployment settings.
